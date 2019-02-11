@@ -13,6 +13,7 @@ sources = [
     "https://github.com/cimgui/cimgui.git" =>
     "d2ee8fc7ddf4309960936e4e79a1e19abba144f5",
 
+    "wrapper",
 ]
 
 # Bash recipe for building across all platforms
@@ -25,6 +26,11 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$prefix -DCMAKE_TOOLCHAIN_FILE=/opt/$target/$tar
 make
 make install
 
+cd $WORKSPACE/srcdir/helper
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$prefix -DCMAKE_TOOLCHAIN_FILE=/opt/$target/$target.toolchain
+make
+make install
 """
 
 # These are the platforms we will build for by default, unless further
@@ -47,6 +53,7 @@ platforms = [
 # The products that we will ensure are always built
 products(prefix) = [
     LibraryProduct(prefix, "cimgui", :libcimgui)
+    LibraryProduct(prefix, "cimgui_helper", :libcimgui_helper)
 ]
 
 # Dependencies that must be installed before this package can be built
