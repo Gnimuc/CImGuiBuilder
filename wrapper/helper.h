@@ -167,5 +167,13 @@ CIMGUI_API ImTextureID ImDrawCmd_Get_TextureId(ImDrawCmd* cmd);
 CIMGUI_API ImDrawCallback ImDrawCmd_Get_UserCallback(ImDrawCmd* cmd);
 CIMGUI_API void* ImDrawCmd_Get_UserCallbackData(ImDrawCmd* cmd);
 
+// ImGuiSizeCallbackData_Get
+CIMGUI_API void* ImGuiSizeCallbackData_Get_UserData(ImGuiSizeCallbackData* data);
+CIMGUI_API ImVec2 ImGuiSizeCallbackData_Get_Pos(ImGuiSizeCallbackData* data);
+CIMGUI_API ImVec2 ImGuiSizeCallbackData_Get_CurrentSize(ImGuiSizeCallbackData* data);
+CIMGUI_API ImVec2 ImGuiSizeCallbackData_Get_DesiredSize(ImGuiSizeCallbackData* data);
+// ImGuiSizeCallbackData_Set
+CIMGUI_API void ImGuiSizeCallbackData_Set_DesiredSize(ImGuiSizeCallbackData* data, ImVec2 x);
+
 
 #endif // CIMGUI_HELPER

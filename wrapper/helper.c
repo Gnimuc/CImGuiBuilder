@@ -161,3 +161,11 @@ ImVec4 ImDrawCmd_Get_ClipRect(ImDrawCmd* cmd) { return cmd->ClipRect; }
 ImTextureID ImDrawCmd_Get_TextureId(ImDrawCmd* cmd) { return cmd->TextureId; }
 ImDrawCallback ImDrawCmd_Get_UserCallback(ImDrawCmd* cmd) { return cmd->UserCallback; }
 void* ImDrawCmd_Get_UserCallbackData(ImDrawCmd* cmd) { return cmd->UserCallbackData; }
+
+// ImGuiSizeCallbackData_Get
+void* ImGuiSizeCallbackData_Get_UserData(ImGuiSizeCallbackData* data) { return data->UserData; }
+ImVec2 ImGuiSizeCallbackData_Get_Pos(ImGuiSizeCallbackData* data) { return data->Pos; }
+ImVec2 ImGuiSizeCallbackData_Get_CurrentSize(ImGuiSizeCallbackData* data) { return data->CurrentSize; }
+ImVec2 ImGuiSizeCallbackData_Get_DesiredSize(ImGuiSizeCallbackData* data) { return data->DesiredSize; }
+// ImGuiSizeCallbackData_Set
+void ImGuiSizeCallbackData_Set_DesiredSize(ImGuiSizeCallbackData* data, ImVec2 x) { data->DesiredSize = x; }
