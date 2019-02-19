@@ -98,6 +98,10 @@ void ImGuiIO_Set_ConfigInputTextCursorBlink(ImGuiIO* io, bool x) { io->ConfigInp
 void ImGuiIO_Set_ConfigResizeWindowsFromEdges(ImGuiIO* io, bool x) { io->ConfigResizeWindowsFromEdges = x; }
 void ImGuiIO_Set_BackendPlatformName(ImGuiIO* io, const char* x) { io->BackendPlatformName = x; }
 void ImGuiIO_Set_BackendRendererName(ImGuiIO* io, const char* x) { io->BackendRendererName = x; }
+void ImGuiIO_Set_GetClipboardTextFn(ImGuiIO* io, void* x) { io->GetClipboardTextFn = x; }
+void ImGuiIO_Set_SetClipboardTextFn(ImGuiIO* io, void* x) { io->SetClipboardTextFn = x; }
+void ImGuiIO_Set_ClipboardUserData(ImGuiIO* io, void* x) { io->ClipboardUserData = x; }
+void ImGuiIO_Set_ImeSetInputScreenPosFn(ImGuiIO* io, void* x) { io->ImeSetInputScreenPosFn = x; }
 void ImGuiIO_Set_ImeWindowHandle(ImGuiIO* io, void* x) { io->ImeWindowHandle = x; }
 void ImGuiIO_Set_RenderDrawListsFnUnused(ImGuiIO* io, void* x) { io->RenderDrawListsFnUnused = x; }
 void ImGuiIO_Set_MousePos(ImGuiIO* io, ImVec2 x) { io->MousePos = x; }
