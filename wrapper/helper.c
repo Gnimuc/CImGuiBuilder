@@ -20,14 +20,20 @@ float ImGuiIO_Get_FontGlobalScale(ImGuiIO* io) { return io->FontGlobalScale; }
 bool ImGuiIO_Get_FontAllowUserScaling(ImGuiIO* io) { return io->FontAllowUserScaling; }
 ImFont* ImGuiIO_Get_FontDefault(ImGuiIO* io) { return io->FontDefault; }
 ImVec2 ImGuiIO_Get_DisplayFramebufferScale(ImGuiIO* io) { return io->DisplayFramebufferScale; }
-ImVec2 ImGuiIO_Get_DisplayVisibleMin(ImGuiIO* io) { return io->DisplayVisibleMin; }
-ImVec2 ImGuiIO_Get_DisplayVisibleMax(ImGuiIO* io) { return io->DisplayVisibleMax; }
 bool ImGuiIO_Get_MouseDrawCursor(ImGuiIO* io) { return io->MouseDrawCursor; }
 bool ImGuiIO_Get_ConfigMacOSXBehaviors(ImGuiIO* io) { return io->ConfigMacOSXBehaviors; }
 bool ImGuiIO_Get_ConfigInputTextCursorBlink(ImGuiIO* io) { return io->ConfigInputTextCursorBlink; }
-bool ImGuiIO_Get_ConfigResizeWindowsFromEdges(ImGuiIO* io) { return io->ConfigResizeWindowsFromEdges; }
+bool ImGuiIO_Get_ConfigWindowsResizeFromEdges(ImGuiIO* io) { return io->ConfigWindowsResizeFromEdges; }
+bool ImGuiIO_Get_ConfigWindowsMoveFromTitleBarOnly(ImGuiIO* io) { return io->ConfigWindowsMoveFromTitleBarOnly; }
 const char* ImGuiIO_Get_BackendPlatformName(ImGuiIO* io) { return io->BackendPlatformName; }
 const char* ImGuiIO_Get_BackendRendererName(ImGuiIO* io) { return io->BackendRendererName; }
+void* ImGuiIO_Get_BackendPlatformUserData(ImGuiIO* io) { return io->BackendPlatformUserData; }
+void* ImGuiIO_Get_BackendRendererUserData(ImGuiIO* io) { return io->BackendRendererUserData; }
+void* ImGuiIO_Get_BackendLanguageUserData(ImGuiIO* io) { return io->BackendLanguageUserData; }
+// const char* (*GetClipboardTextFn)(void* user_data);
+// void (*SetClipboardTextFn)(void* user_data, const char* text);
+// void* ClipboardUserData;
+// void (*ImeSetInputScreenPosFn)(int x, int y);
 void* ImGuiIO_Get_ImeWindowHandle(ImGuiIO* io) { return io->ImeWindowHandle; }
 void* ImGuiIO_Get_RenderDrawListsFnUnused(ImGuiIO* io) { return io->RenderDrawListsFnUnused; }
 ImVec2 ImGuiIO_Get_MousePos(ImGuiIO* io) { return io->MousePos; }
@@ -39,7 +45,6 @@ bool ImGuiIO_Get_KeyShift(ImGuiIO* io) { return io->KeyShift; }
 bool ImGuiIO_Get_KeyAlt(ImGuiIO* io) { return io->KeyAlt; }
 bool ImGuiIO_Get_KeySuper(ImGuiIO* io) { return io->KeySuper; }
 bool ImGuiIO_Get_KeysDown(ImGuiIO* io, int i) { return io->KeysDown[i]; }
-ImWchar ImGuiIO_Get_InputCharacters(ImGuiIO* io, int i) { return io->InputCharacters[i]; }
 float ImGuiIO_Get_NavInputs(ImGuiIO* io, int i) { return io->NavInputs[i]; }
 bool ImGuiIO_Get_WantCaptureMouse(ImGuiIO* io) { return io->WantCaptureMouse; }
 bool ImGuiIO_Get_WantCaptureKeyboard(ImGuiIO* io) { return io->WantCaptureKeyboard; }
@@ -70,6 +75,8 @@ float ImGuiIO_Get_KeysDownDuration(ImGuiIO* io, int i) { return io->KeysDownDura
 float ImGuiIO_Get_KeysDownDurationPrev(ImGuiIO* io, int i) { return io->KeysDownDurationPrev[i]; }
 float ImGuiIO_Get_NavInputsDownDuration(ImGuiIO* io, int i) { return io->NavInputsDownDuration[i]; }
 float ImGuiIO_Get_NavInputsDownDurationPrev(ImGuiIO* io, int i) { return io->NavInputsDownDurationPrev[i]; }
+ImVector_ImWchar ImGuiIO_Get_InputQueueCharacters(ImGuiIO* io) { return io->InputQueueCharacters; }
+
 // ImGuiIO_Set
 void ImGuiIO_Set_ConfigFlags(ImGuiIO* io, ImGuiConfigFlags x) { io->ConfigFlags = x; }
 void ImGuiIO_Set_BackendFlags(ImGuiIO* io, ImGuiBackendFlags x) { io->BackendFlags = x; }
@@ -90,14 +97,16 @@ void ImGuiIO_Set_FontGlobalScale(ImGuiIO* io, float x) { io->FontGlobalScale = x
 void ImGuiIO_Set_FontAllowUserScaling(ImGuiIO* io, bool x) { io->FontAllowUserScaling = x; }
 void ImGuiIO_Set_FontDefault(ImGuiIO* io, ImFont* x) { io->FontDefault = x; }
 void ImGuiIO_Set_DisplayFramebufferScale(ImGuiIO* io, ImVec2 x) { io->DisplayFramebufferScale = x; }
-void ImGuiIO_Set_DisplayVisibleMin(ImGuiIO* io, ImVec2 x) { io->DisplayVisibleMin = x; }
-void ImGuiIO_Set_DisplayVisibleMax(ImGuiIO* io, ImVec2 x) { io->DisplayVisibleMax = x; }
 void ImGuiIO_Set_MouseDrawCursor(ImGuiIO* io, bool x) { io->MouseDrawCursor = x; }
 void ImGuiIO_Set_ConfigMacOSXBehaviors(ImGuiIO* io, bool x) { io->ConfigMacOSXBehaviors = x; }
 void ImGuiIO_Set_ConfigInputTextCursorBlink(ImGuiIO* io, bool x) { io->ConfigInputTextCursorBlink = x; }
-void ImGuiIO_Set_ConfigResizeWindowsFromEdges(ImGuiIO* io, bool x) { io->ConfigResizeWindowsFromEdges = x; }
+void ImGuiIO_Set_ConfigWindowsResizeFromEdges(ImGuiIO* io, bool x) { io->ConfigWindowsResizeFromEdges = x; }
+void ImGuiIO_Set_ConfigWindowsMoveFromTitleBarOnly(ImGuiIO* io, bool x) { io->ConfigWindowsMoveFromTitleBarOnly = x; }
 void ImGuiIO_Set_BackendPlatformName(ImGuiIO* io, const char* x) { io->BackendPlatformName = x; }
 void ImGuiIO_Set_BackendRendererName(ImGuiIO* io, const char* x) { io->BackendRendererName = x; }
+void ImGuiIO_Set_BackendPlatformUserData(ImGuiIO* io, void* x) { io->BackendPlatformUserData = x; }
+void ImGuiIO_Set_BackendRendererUserData(ImGuiIO* io, void* x) { io->BackendRendererUserData = x; }
+void ImGuiIO_Set_BackendLanguageUserData(ImGuiIO* io, void* x) { io->BackendLanguageUserData = x; }
 void ImGuiIO_Set_GetClipboardTextFn(ImGuiIO* io, void* x) { io->GetClipboardTextFn = x; }
 void ImGuiIO_Set_SetClipboardTextFn(ImGuiIO* io, void* x) { io->SetClipboardTextFn = x; }
 void ImGuiIO_Set_ClipboardUserData(ImGuiIO* io, void* x) { io->ClipboardUserData = x; }
@@ -113,7 +122,6 @@ void ImGuiIO_Set_KeyShift(ImGuiIO* io, bool x) { io->KeyShift = x; }
 void ImGuiIO_Set_KeyAlt(ImGuiIO* io, bool x) { io->KeyAlt = x; }
 void ImGuiIO_Set_KeySuper(ImGuiIO* io, bool x) { io->KeySuper = x; }
 void ImGuiIO_Set_KeysDown(ImGuiIO* io, int i, bool x) { io->KeysDown[i] = x; }
-void ImGuiIO_Set_InputCharacters(ImGuiIO* io, int i, ImWchar x) { io->InputCharacters[i] = x; }
 void ImGuiIO_Set_NavInputs(ImGuiIO* io, int i, float x) { io->NavInputs[i] = x; }
 void ImGuiIO_Set_WantCaptureMouse(ImGuiIO* io, bool x) { io->WantCaptureMouse = x; }
 void ImGuiIO_Set_WantCaptureKeyboard(ImGuiIO* io, bool x) { io->WantCaptureKeyboard = x; }
