@@ -161,6 +161,7 @@ int ImDrawData_Get_TotalIdxCount(ImDrawData* data) { return data->TotalIdxCount;
 int ImDrawData_Get_TotalVtxCount(ImDrawData* data) { return data->TotalVtxCount; }
 ImVec2 ImDrawData_Get_DisplayPos(ImDrawData* data) { return data->DisplayPos; }
 ImVec2 ImDrawData_Get_DisplaySize(ImDrawData* data) { return data->DisplaySize; }
+ImVec2 ImDrawData_Get_FramebufferScale(ImDrawData* data) { return data->FramebufferScale; }
 
 // ImDrawList_Get
 ImVector_ImDrawCmd ImDrawList_Get_CmdBuffer(ImDrawList* list) { return list->CmdBuffer; }

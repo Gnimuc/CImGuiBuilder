@@ -160,6 +160,7 @@ CIMGUI_API int ImDrawData_Get_TotalIdxCount(ImDrawData* data);
 CIMGUI_API int ImDrawData_Get_TotalVtxCount(ImDrawData* data);
 CIMGUI_API ImVec2 ImDrawData_Get_DisplayPos(ImDrawData* data);
 CIMGUI_API ImVec2 ImDrawData_Get_DisplaySize(ImDrawData* data);
+CIMGUI_API ImVec2 ImDrawData_Get_FramebufferScale(ImDrawData* data);
 
 // ImDrawList_Get
 CIMGUI_API ImVector_ImDrawCmd ImDrawList_Get_CmdBuffer(ImDrawList* list);
