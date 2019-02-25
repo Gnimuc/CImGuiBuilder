@@ -153,6 +153,76 @@ void ImGuiIO_Set_KeysDownDurationPrev(ImGuiIO* io, int i, float x) { io->KeysDow
 void ImGuiIO_Set_NavInputsDownDuration(ImGuiIO* io, int i, float x) { io->NavInputsDownDuration[i] = x; }
 void ImGuiIO_Set_NavInputsDownDurationPrev(ImGuiIO* io, int i, float x) { io->NavInputsDownDurationPrev[i] = x; }
 
+// ImGuiStyle_Get
+float ImGuiStyle_Get_Alpha(ImGuiStyle* s) { return s->Alpha; }
+ImVec2 ImGuiStyle_Get_WindowPadding(ImGuiStyle* s) { return s->WindowPadding; }
+float ImGuiStyle_Get_WindowRounding(ImGuiStyle* s) { return s->WindowRounding; }
+float ImGuiStyle_Get_WindowBorderSize(ImGuiStyle* s) { return s->WindowBorderSize; }
+ImVec2 ImGuiStyle_Get_WindowMinSize(ImGuiStyle* s) { return s->WindowMinSize; }
+ImVec2 ImGuiStyle_Get_WindowTitleAlign(ImGuiStyle* s) { return s->WindowTitleAlign; }
+float ImGuiStyle_Get_ChildRounding(ImGuiStyle* s) { return s->ChildRounding; }
+float ImGuiStyle_Get_ChildBorderSize(ImGuiStyle* s) { return s->ChildBorderSize; }
+float ImGuiStyle_Get_PopupRounding(ImGuiStyle* s) { return s->PopupRounding; }
+float ImGuiStyle_Get_PopupBorderSize(ImGuiStyle* s) { return s->PopupBorderSize; }
+ImVec2 ImGuiStyle_Get_FramePadding(ImGuiStyle* s) { return s->FramePadding; }
+float ImGuiStyle_Get_FrameRounding(ImGuiStyle* s) { return s->FrameRounding; }
+float ImGuiStyle_Get_FrameBorderSize(ImGuiStyle* s) { return s->FrameBorderSize; }
+ImVec2 ImGuiStyle_Get_ItemSpacing(ImGuiStyle* s) { return s->ItemSpacing; }
+ImVec2 ImGuiStyle_Get_ItemInnerSpacing(ImGuiStyle* s) { return s->ItemInnerSpacing; }
+ImVec2 ImGuiStyle_Get_TouchExtraPadding(ImGuiStyle* s) { return s->TouchExtraPadding; }
+float ImGuiStyle_Get_IndentSpacing(ImGuiStyle* s) { return s->IndentSpacing; }
+float ImGuiStyle_Get_ColumnsMinSpacing(ImGuiStyle* s) { return s->ColumnsMinSpacing; }
+float ImGuiStyle_Get_ScrollbarSize(ImGuiStyle* s) { return s->ScrollbarSize; }
+float ImGuiStyle_Get_ScrollbarRounding(ImGuiStyle* s) { return s->ScrollbarRounding; }
+float ImGuiStyle_Get_GrabMinSize(ImGuiStyle* s) { return s->GrabMinSize; }
+float ImGuiStyle_Get_GrabRounding(ImGuiStyle* s) { return s->GrabRounding; }
+float ImGuiStyle_Get_TabRounding(ImGuiStyle* s) { return s->TabRounding; }
+float ImGuiStyle_Get_TabBorderSize(ImGuiStyle* s) { return s->TabBorderSize; }
+ImVec2 ImGuiStyle_Get_ButtonTextAlign(ImGuiStyle* s) { return s->ButtonTextAlign; }
+ImVec2 ImGuiStyle_Get_SelectableTextAlign(ImGuiStyle* s) { return s->SelectableTextAlign; }
+ImVec2 ImGuiStyle_Get_DisplayWindowPadding(ImGuiStyle* s) { return s->DisplayWindowPadding; }
+ImVec2 ImGuiStyle_Get_DisplaySafeAreaPadding(ImGuiStyle* s) { return s->DisplaySafeAreaPadding; }
+float ImGuiStyle_Get_MouseCursorScale(ImGuiStyle* s) { return s->MouseCursorScale; }
+bool ImGuiStyle_Get_AntiAliasedLines(ImGuiStyle* s) { return s->AntiAliasedLines; }
+bool ImGuiStyle_Get_AntiAliasedFill(ImGuiStyle* s) { return s->AntiAliasedFill; }
+float ImGuiStyle_Get_CurveTessellationTol(ImGuiStyle* s) { return s->CurveTessellationTol; }
+ImVec4 ImGuiStyle_Get_Colors(ImGuiStyle* s, int i) { return s->Colors[i]; }
+
+// ImGuiStyle_Set
+void ImGuiStyle_Set_Alpha(ImGuiStyle* s, float v) { s->Alpha = v; }
+void ImGuiStyle_Set_WindowPadding(ImGuiStyle* s, ImVec2 v) { s->WindowPadding = v; }
+void ImGuiStyle_Set_WindowRounding(ImGuiStyle* s, float v) { s->WindowRounding = v; }
+void ImGuiStyle_Set_WindowBorderSize(ImGuiStyle* s, float v) { s->WindowBorderSize = v; }
+void ImGuiStyle_Set_WindowMinSize(ImGuiStyle* s, ImVec2 v) { s->WindowMinSize = v; }
+void ImGuiStyle_Set_WindowTitleAlign(ImGuiStyle* s, ImVec2 v) { s->WindowTitleAlign = v; }
+void ImGuiStyle_Set_ChildRounding(ImGuiStyle* s, float v) { s->ChildRounding = v; }
+void ImGuiStyle_Set_ChildBorderSize(ImGuiStyle* s, float v) { s->ChildBorderSize = v; }
+void ImGuiStyle_Set_PopupRounding(ImGuiStyle* s, float v) { s->PopupRounding = v; }
+void ImGuiStyle_Set_PopupBorderSize(ImGuiStyle* s, float v) { s->PopupBorderSize = v; }
+void ImGuiStyle_Set_FramePadding(ImGuiStyle* s, ImVec2 v) { s->FramePadding = v; }
+void ImGuiStyle_Set_FrameRounding(ImGuiStyle* s, float v) { s->FrameRounding = v; }
+void ImGuiStyle_Set_FrameBorderSize(ImGuiStyle* s, float v) { s->FrameBorderSize = v; }
+void ImGuiStyle_Set_ItemSpacing(ImGuiStyle* s, ImVec2 v) { s->ItemSpacing = v; }
+void ImGuiStyle_Set_ItemInnerSpacing(ImGuiStyle* s, ImVec2 v) { s->ItemInnerSpacing = v; }
+void ImGuiStyle_Set_TouchExtraPadding(ImGuiStyle* s, ImVec2 v) { s->TouchExtraPadding = v; }
+void ImGuiStyle_Set_IndentSpacing(ImGuiStyle* s, float v) { s->IndentSpacing = v; }
+void ImGuiStyle_Set_ColumnsMinSpacing(ImGuiStyle* s, float v) { s->ColumnsMinSpacing = v; }
+void ImGuiStyle_Set_ScrollbarSize(ImGuiStyle* s, float v) { s->ScrollbarSize = v; }
+void ImGuiStyle_Set_ScrollbarRounding(ImGuiStyle* s, float v) { s->ScrollbarRounding = v; }
+void ImGuiStyle_Set_GrabMinSize(ImGuiStyle* s, float v) { s->GrabMinSize = v; }
+void ImGuiStyle_Set_GrabRounding(ImGuiStyle* s, float v) { s->GrabRounding = v; }
+void ImGuiStyle_Set_TabRounding(ImGuiStyle* s, float v) { s->TabRounding = v; }
+void ImGuiStyle_Set_TabBorderSize(ImGuiStyle* s, float v) { s->TabBorderSize = v; }
+void ImGuiStyle_Set_ButtonTextAlign(ImGuiStyle* s, ImVec2 v) { s->ButtonTextAlign = v; }
+void ImGuiStyle_Set_SelectableTextAlign(ImGuiStyle* s, ImVec2 v) { s->SelectableTextAlign = v; }
+void ImGuiStyle_Set_DisplayWindowPadding(ImGuiStyle* s, ImVec2 v) { s->DisplayWindowPadding = v; }
+void ImGuiStyle_Set_DisplaySafeAreaPadding(ImGuiStyle* s, ImVec2 v) { s->DisplaySafeAreaPadding = v; }
+void ImGuiStyle_Set_MouseCursorScale(ImGuiStyle* s, float v) { s->MouseCursorScale = v; }
+void ImGuiStyle_Set_AntiAliasedLines(ImGuiStyle* s, bool v) { s->AntiAliasedLines = v; }
+void ImGuiStyle_Set_AntiAliasedFill(ImGuiStyle* s, bool v) { s->AntiAliasedFill = v; }
+void ImGuiStyle_Set_CurveTessellationTol(ImGuiStyle* s, float v) { s->CurveTessellationTol = v; }
+void ImGuiStyle_Set_Colors(ImGuiStyle* s, int i, ImVec4 v) { s->Colors[i] = v; }
+
 // ImDrawData_Get
 bool ImDrawData_Get_Valid(ImDrawData* data) { return data->Valid; }
 ImDrawList* ImDrawData_Get_CmdLists(ImDrawData* data, int i) { return data->CmdLists[i]; }
@@ -182,3 +252,16 @@ ImVec2 ImGuiSizeCallbackData_Get_CurrentSize(ImGuiSizeCallbackData* data) { retu
 ImVec2 ImGuiSizeCallbackData_Get_DesiredSize(ImGuiSizeCallbackData* data) { return data->DesiredSize; }
 // ImGuiSizeCallbackData_Set
 void ImGuiSizeCallbackData_Set_DesiredSize(ImGuiSizeCallbackData* data, ImVec2 x) { data->DesiredSize = x; }
+
+// ImFontAtlas_Get
+bool ImFontAtlas_Get_Locked(ImFontAtlas* f) { return f->Locked; }
+ImFontAtlasFlags ImFontAtlas_Get_Flags(ImFontAtlas* f) { return f->Flags; }
+ImTextureID ImFontAtlas_Get_TexID(ImFontAtlas* f) { return f->TexID; }
+int ImFontAtlas_Get_TexDesiredWidth(ImFontAtlas* f) { return f->TexDesiredWidth; }
+int ImFontAtlas_Get_TexGlyphPadding(ImFontAtlas* f) { return f->TexGlyphPadding; }
+unsigned char* ImFontAtlas_Get_TexPixelsAlpha8(ImFontAtlas* f) { return f->TexPixelsAlpha8; }
+unsigned int* ImFontAtlas_Get_TexPixelsRGBA32(ImFontAtlas* f) { return f->TexPixelsRGBA32; }
+int ImFontAtlas_Get_TexWidth(ImFontAtlas* f) { return f->TexWidth; }
+int ImFontAtlas_Get_TexHeight(ImFontAtlas* f) { return f->TexHeight; }
+ImVec2 ImFontAtlas_Get_TexUvScale(ImFontAtlas* f) { return f->TexUvScale; }
+ImVec2 ImFontAtlas_Get_TexUvWhitePixel(ImFontAtlas* f) { return f->TexUvWhitePixel; }

@@ -152,6 +152,76 @@ CIMGUI_API void ImGuiIO_Set_KeysDownDurationPrev(ImGuiIO* io, int i, float x);
 CIMGUI_API void ImGuiIO_Set_NavInputsDownDuration(ImGuiIO* io, int i, float x);
 CIMGUI_API void ImGuiIO_Set_NavInputsDownDurationPrev(ImGuiIO* io, int i, float x);
 
+// ImGuiStyle_Get
+CIMGUI_API float ImGuiStyle_Get_Alpha(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_WindowPadding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_WindowRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_WindowBorderSize(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_WindowMinSize(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_WindowTitleAlign(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_ChildRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_ChildBorderSize(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_PopupRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_PopupBorderSize(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_FramePadding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_FrameRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_FrameBorderSize(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_ItemSpacing(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_ItemInnerSpacing(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_TouchExtraPadding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_IndentSpacing(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_ColumnsMinSpacing(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_ScrollbarSize(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_ScrollbarRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_GrabMinSize(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_GrabRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_TabRounding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_TabBorderSize(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_ButtonTextAlign(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_SelectableTextAlign(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_DisplayWindowPadding(ImGuiStyle* s);
+CIMGUI_API ImVec2 ImGuiStyle_Get_DisplaySafeAreaPadding(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_MouseCursorScale(ImGuiStyle* s);
+CIMGUI_API bool ImGuiStyle_Get_AntiAliasedLines(ImGuiStyle* s);
+CIMGUI_API bool ImGuiStyle_Get_AntiAliasedFill(ImGuiStyle* s);
+CIMGUI_API float ImGuiStyle_Get_CurveTessellationTol(ImGuiStyle* s);
+CIMGUI_API ImVec4 ImGuiStyle_Get_Colors(ImGuiStyle* s, int i);
+
+// ImGuiStyle_Set
+CIMGUI_API void ImGuiStyle_Set_Alpha(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_WindowPadding(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_WindowRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_WindowBorderSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_WindowMinSize(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_WindowTitleAlign(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_ChildRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ChildBorderSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_PopupRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_PopupBorderSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_FramePadding(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_FrameRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_FrameBorderSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ItemSpacing(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_ItemInnerSpacing(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_TouchExtraPadding(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_IndentSpacing(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ColumnsMinSpacing(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ScrollbarSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ScrollbarRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_GrabMinSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_GrabRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_TabRounding(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_TabBorderSize(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_ButtonTextAlign(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_SelectableTextAlign(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_DisplayWindowPadding(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_DisplaySafeAreaPadding(ImGuiStyle* s, ImVec2 v);
+CIMGUI_API void ImGuiStyle_Set_MouseCursorScale(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_AntiAliasedLines(ImGuiStyle* s, bool v);
+CIMGUI_API void ImGuiStyle_Set_AntiAliasedFill(ImGuiStyle* s, bool v);
+CIMGUI_API void ImGuiStyle_Set_CurveTessellationTol(ImGuiStyle* s, float v);
+CIMGUI_API void ImGuiStyle_Set_Colors(ImGuiStyle* s, int i, ImVec4 v);
+
 // ImDrawData_Get
 CIMGUI_API bool ImDrawData_Get_Valid(ImDrawData* data);
 CIMGUI_API ImDrawList* ImDrawData_Get_CmdLists(ImDrawData* data, int i);
@@ -182,5 +252,17 @@ CIMGUI_API ImVec2 ImGuiSizeCallbackData_Get_DesiredSize(ImGuiSizeCallbackData* d
 // ImGuiSizeCallbackData_Set
 CIMGUI_API void ImGuiSizeCallbackData_Set_DesiredSize(ImGuiSizeCallbackData* data, ImVec2 x);
 
+// ImFontAtlas_Get
+CIMGUI_API bool ImFontAtlas_Get_Locked(ImFontAtlas* f);
+CIMGUI_API ImFontAtlasFlags ImFontAtlas_Get_Flags(ImFontAtlas* f);
+CIMGUI_API ImTextureID ImFontAtlas_Get_TexID(ImFontAtlas* f);
+CIMGUI_API int ImFontAtlas_Get_TexDesiredWidth(ImFontAtlas* f);
+CIMGUI_API int ImFontAtlas_Get_TexGlyphPadding(ImFontAtlas* f);
+CIMGUI_API unsigned char* ImFontAtlas_Get_TexPixelsAlpha8(ImFontAtlas* f);
+CIMGUI_API unsigned int* ImFontAtlas_Get_TexPixelsRGBA32(ImFontAtlas* f);
+CIMGUI_API int ImFontAtlas_Get_TexWidth(ImFontAtlas* f);
+CIMGUI_API int ImFontAtlas_Get_TexHeight(ImFontAtlas* f);
+CIMGUI_API ImVec2 ImFontAtlas_Get_TexUvScale(ImFontAtlas* f);
+CIMGUI_API ImVec2 ImFontAtlas_Get_TexUvWhitePixel(ImFontAtlas* f);
 
 #endif // CIMGUI_HELPER
