@@ -3,55 +3,43 @@
 using BinaryBuilder
 
 name = "CImGui"
-version = v"1.73.0"
+version = v"1.74.0"
 
 # Collection of sources required to build CImGui
 sources = [
     "https://github.com/ocornut/imgui.git" =>
-    "688cf868ea83db6c2958dd6bf7a20d471d00940b",
+    "bdce8336364595d1a446957a6164c97363349a53",
 
     "https://github.com/cimgui/cimgui.git" =>
-    "1c65ee2bdc719fb3ef62b4615d66fe8effa21148",
+    "d9e1d9a80d621cd96d9900ac340092853100416f",
 
-    "wrapper",
+    "https://github.com/Gnimuc/CImGuiBuilder.git" =>
+    "3a2c95f417d2769ff5fae9beb73baf27416859cc",
 ]
 
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
 mv imgui cimgui/
-mv helper.c cimgui/
-mv helper.h cimgui/
+mv CImGuiBuilder/wrapper/helper.c cimgui/
+mv CImGuiBuilder/wrapper/helper.h cimgui/
 cd cimgui/
 rm CMakeLists.txt
-mv ../CMakeLists.txt ./
+mv ../CImGuiBuilder/wrapper/CMakeLists.txt ./
 mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=${prefix} -DCMAKE_TOOLCHAIN_FILE=/opt/${target}/${target}.toolchain
+cmake .. -DCMAKE_INSTALL_PREFIX=${prefix} -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TARGET_TOOLCHAIN}
 make
 make install
 """
 
 # These are the platforms we will build for by default, unless further
 # platforms are passed in on the command line
-platforms = [
-    Linux(:i686, libc=:glibc),
-    Linux(:x86_64, libc=:glibc),
-    Linux(:aarch64, libc=:glibc),
-    Linux(:armv7l, libc=:glibc, call_abi=:eabihf),
-    Linux(:i686, libc=:musl),
-    Linux(:x86_64, libc=:musl),
-    Linux(:aarch64, libc=:musl),
-    Linux(:armv7l, libc=:musl, call_abi=:eabihf),
-    MacOS(:x86_64),
-    FreeBSD(:x86_64),
-    Windows(:i686),
-    Windows(:x86_64)
-]
+platforms = supported_platforms()
 
 # The products that we will ensure are always built
-products(prefix) = [
-    LibraryProduct(prefix, "libcimgui", :libcimgui)
-    LibraryProduct(prefix, "libcimgui_helper", :libcimgui_helper)
+products = [
+    LibraryProduct("libcimgui", :libcimgui)
+    LibraryProduct("libcimgui_helper", :libcimgui_helper)
 ]
 
 # Dependencies that must be installed before this package can be built
