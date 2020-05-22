@@ -2,3 +2,5 @@ products/
 downloads/
 build/
 cimgui
+cimplot
+*.ini

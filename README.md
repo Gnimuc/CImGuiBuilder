@@ -14,7 +14,7 @@ This repository was created using [BinaryBuilder.jl](https://github.com/JuliaPac
 cd wrapper
 git clone --recursive https://github.com/cimgui/cimgui.git
 cd cimgui
-git checkout 1.72b
+git checkout 1.75
 git submodule update
 
 # for patched or extended imgui versions, you might need to regenerate C89 wrappers using cimgui, see https://github.com/cimgui/cimgui#using-generator for further details  
@@ -26,6 +26,20 @@ rm CMakeLists.txt
 cp ../CMakeLists.txt ./
 
 # build and install
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=./
+make
+make install
+```
+
+## cimplot
+```
+cd wrapper
+git clone --recursive https://github.com/cimgui/cimplot.git
+cd cimplot
+git checkout 8799c69b20081a744f44bb1ff9d39f6c8d8f23a1
+git submodule update
+cp ../CMakeLists2.txt ./CMakeLists.txt
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=./
 make
